@@ -31,19 +31,24 @@ describe('Accedo a Wish', () => {
                      cy.get(':nth-child(2) > .WishSelectInput__SelectBox-sc-1hxkg4o-0').click();
                      cy.get(':nth-child(2) > .WishSelectInput__SelectBox-sc-1hxkg4o-0 > .WishSelectInput__SelectBoxDropdown-sc-1hxkg4o-3 > [data-index="0"] > .DimensionSection__DropdownOptionWrapper-sc-1sp8lqj-1 > .DimensionSection__DropdownOption-sc-1sp8lqj-2 > .DimensionSection__DimensionText-sc-1sp8lqj-3').click();
                       
+              } else {
+                     
+                     cy.get('.BuyButton__Button-z0grbs-0').click();
+              
+                     cy.wait(5000);
+                     cy.get('.CartSection__Wrapper-gh8209-0 > :nth-child(1)').click();
+                     cy.get('.WishButtons__WishButton-sc-13cvktr-0').click();
+                     cy.get('#addressLineOne').type('108 Madison Ave');
+                     cy.get('.CheckoutPage__CountrySelect-n9jrtr-26').click();
+                     cy.get('CheckoutPage__CountrySelect-n9jrtr-26 gxsqDq').select('United States')
+                     cy.get('#city').type('Birmingham');
+                     cy.get('#state').click().select('Alabama');
+                     cy.get('#zipcode').type('35005');
+                     cy.get('.CheckoutPage__NextButton-n9jrtr-4').click();
+
               }
  
-              cy.get('.BuyButton__Button-z0grbs-0').click();
               
-              cy.wait(5000);
-              cy.get('.CartSection__Wrapper-gh8209-0 > :nth-child(1)').click();
-              cy.get('.WishButtons__WishButton-sc-13cvktr-0').click();
-              cy.get('#addressLineOne').type('108 Madison Ave');
-              cy.get('.CheckoutPage__CountrySelect-n9jrtr-26').click().select('United States');
-              cy.get('#city').type('Birmingham');
-              cy.get('#state').click().select('Alabama');
-              cy.get('#zipcode').type('35005');
-              cy.get('.CheckoutPage__NextButton-n9jrtr-4').click();
 
 
        })
